@@ -1,0 +1,9 @@
+<h1>Titles</h1><h1>Listen</h1>
+<ul>
+  {{#each albumTracks.items}}
+  <li>
+    <h2>{{ name }}</h2>
+    <audio controls src="{{ preview_url }}">Your browser does not support the <code>audio</code> element.</audio>
+  </li>
+  {{/each}}
+</ul>

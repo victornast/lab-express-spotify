@@ -28,7 +28,7 @@ app.use(express.static(__dirname + '/public'));
 // Our routes go here:
 
 app.get('/', (request, response) => {
-  response.render('home', { pageTitle: 'Home', activeHome: true });
+  response.render('home', { pageTitle: 'Home' });
 });
 
 app.get('/artist-search', (request, response) => {
@@ -41,7 +41,8 @@ app.get('/artist-search', (request, response) => {
       // console.log(data.body.artists.items[0]);
       response.render('artist-search-results', {
         pageTitle: 'Search Results',
-        artistList: data.body.artists
+        artistList: data.body.artists,
+        searchQuery: searchQuery
       });
     })
     .catch((err) =>

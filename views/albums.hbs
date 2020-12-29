@@ -1,10 +1,14 @@
-<h1>Albums for: {{ artistAlbums.items.[0].artists.[0].name }}</h1>
-<ul class="sas-album-collection sas-collection">
-  {{#each artistAlbums.items}}
-  <li class="sas-album-collection__entry sas-card">
-    <img class="sas-card__image" src="{{ images.[1].url }}" alt="{{ name }}" />
-    <h2 class="sas-card__name">{{ name }}</h2>
-    <a  class="sas-card__button" href="/tracks/{{ id }}">View Tracks</a>
-  </li>
-  {{/each}}
-</ul>
+<section class="sas-albums">
+  <h1 class="sas-albums__headline">
+    Albums for: {{ artistAlbums.items.[0].artists.[0].name }}
+  </h1>
+  <ul class="sas-albums__collection sas-collection">
+    {{#each artistAlbums.items}}
+    <li class="sas-collection__entry sas-card">
+      <img class="sas-card__image" src="{{ images.[1].url }}" alt="{{ name }}" />
+      <h2 class="sas-card__name">{{ name }}</h2>
+      <a  class="sas-card__button" href="/tracks/{{ id }}">View Tracks</a>
+    </li>
+    {{/each}}
+  </ul>
+</section>

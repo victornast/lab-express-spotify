@@ -1,9 +1,14 @@
-<ul class="sas-artist-collection sas-collection">
-  {{#each artistList.items}}
-  <li class="sas-artist-collection__entry sas-card">
-    <img class="sas-card__image" src="{{ images.[1].url }}" alt="{{ name }}" />
-    <h2 class="sas-card__name">{{ name }}</h2>
-    <a class="sas-card__button" href="/albums/{{ id }}">View Albums</a>
-  </li>
-  {{/each}}
-</ul>
+<section class="sas-search-results">
+  <h1 class="sas-search-result__headline">
+    You searched for: {{ searchQuery }}
+  </h1>
+  <ul class="sas-search-result__collection sas-collection">
+    {{#each artistList.items}}
+    <li class="sas-collection__entry sas-card">
+      <img class="sas-card__image" src="{{ images.[1].url }}" alt="{{ name }}" />
+      <h2 class="sas-card__name">{{ name }}</h2>
+      <a class="sas-card__button" href="/albums/{{ id }}">View Albums</a>
+    </li>
+    {{/each}}
+  </ul>
+</section>

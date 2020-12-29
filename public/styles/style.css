@@ -39,26 +39,107 @@ textarea {
   position: absolute;
 }
 
-/* Artist Search - Homepage */
+/* Components */
 
-.spotify-artist-search {
-  min-height: 100vh;
+/* Collection */
+.sas-collection {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sas-collection__entry:not(:first-child) {
+  margin-top: 1em;
+}
+
+@media (min-width: 400px) {
+  .sas-collection {
+    display: inline-grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2em;
+  }
+
+  .sas-collection__entry:not(:first-child) {
+    margin-top: 0;
+  }
+}
+
+@media (min-width: 700px) {
+  .sas-collection {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* Card */
+.sas-card {
   display: flex;
   flex-direction: column;
-  font-family: 'Montserrat', sans-serif;
-}
-
-.sas--cover {
-  display: flex;
-  justify-content: center;
   align-items: center;
-  background: center / cover no-repeat url('/images/spotify-background.jpeg');
+  max-width: 18em;
+  padding-bottom: 0.7em;
+  background-color: grey;
 }
 
-/* artist search component */
+.sas-card__image {
+  max-height: 300px;
+}
+
+.sas-card__name {
+  color: white;
+  margin: 0.4em;
+  padding: 0;
+  text-align: center;
+}
+
+.sas-card__button {
+  padding: 0.5em 1em;
+  color: white;
+  background-color: salmon;
+  border-radius: 0.25em;
+  text-decoration: none;
+  font-weight: 600;
+  margin-top: auto;
+}
+
+/* Artist Search Component */
+
+.sas-artist-search {
+  display: grid;
+  position: relative;
+}
+
+.sas-artist-search__cover {
+  position: relative;
+  grid-column: 1 / -1;
+  grid-row: 1 / -1;
+  overflow: hidden;
+}
+
+.sas-artist-search__cover::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: orangered;
+  mix-blend-mode: hue;
+}
+
+.sas-artist-search__image {
+  display: block;
+  min-height: 100vh;
+  object-fit: cover;
+  filter: blur(10px);
+  transform: scale(1.1);
+}
 
 /* 1: make container responsive; as wide as possible but not wider than the max value */
-.sas-artist-search {
+.sas-artist-search__form {
+  grid-column: 1 / -1;
+  grid-row: 1 / -1;
+  align-self: center;
+  justify-self: center;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -66,6 +147,7 @@ textarea {
   padding: 4em 6em;
   width: 100%; /* 1 */
   max-width: 40em; /* 1 */
+  z-index: 1;
 }
 
 .sas-artist-search__input,
@@ -90,42 +172,20 @@ textarea {
   background-color: salmon;
 }
 
-/* Album View */
+/* Views */
 
-.sas-collection {
-  list-style: none;
-  padding: 0;
-  display: inline-grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 2em;
-  margin: 2em auto;
-  max-width: auto;
-}
+/* Artist Search - Homepage */
 
-.sas-card {
+.spotify-artist-search {
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 18em;
-  background-color: grey;
+  font-family: 'Montserrat', sans-serif;
 }
 
-.sas-card__image {
-  max-height: 300px;
-}
+/* Search Result & Albums */
 
-.sas-card__name {
-  color: white;
-  margin: 0.2em;
-  padding: 0;
-}
-
-.sas-card__button {
-  padding: 0.5em 1em;
-  color: white;
-  background-color: salmon;
-  border-radius: 0.25em;
-  text-decoration: none;
-  font-weight: 600;
-  margin-bottom: 0.7em;
+.sas-search-results,
+.sas-albums {
+  margin: 0 2em 2em;
 }

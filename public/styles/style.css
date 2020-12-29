@@ -189,3 +189,40 @@ textarea {
 .sas-albums {
   margin: 0 2em 2em;
 }
+
+/* Tracks */
+
+.sas-tracks {
+  border-spacing: 0;
+  width: calc(100% - 2em);
+}
+
+.sas-tracks__head {
+  background-color: #222;
+  color: lightgrey;
+  font-weight: 600;
+  font-size: 1.5em;
+}
+
+.sas-tracks__title-headline {
+  padding: 1.5em 2rem;
+  text-align: left;
+}
+
+.sas-track {
+  background-color: #f1f3f4;
+  font-weight: 600;
+}
+
+.sas-track__entry {
+  border-top: 2px solid white;
+}
+
+.sas-track__name {
+  padding-left: 2rem;
+}
+
+.sas-track__action {
+  width: 300px;
+  text-align: right;
+}

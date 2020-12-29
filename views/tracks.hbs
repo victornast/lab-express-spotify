@@ -1,9 +1,20 @@
-<h1>Titles</h1><h1>Listen</h1>
-<ul>
-  {{#each albumTracks.items}}
-  <li>
-    <h2>{{ name }}</h2>
-    <audio controls src="{{ preview_url }}">Your browser does not support the <code>audio</code> element.</audio>
-  </li>
-  {{/each}}
-</ul>
+<table class="sas-tracks">
+  <thead class="sas-tracks__head">
+    <tr>
+      <th class="sas-tracks__title-headline">Titles</th>
+      <th class="sas-tracks__listen-headline">Listen</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each albumTracks.items}}
+      <tr class="sas-track">
+        <td class="sas-track__name sas-track__entry">
+          {{ name }}
+        </td>
+        <td class="sas-track__action sas-track__entry">
+          <audio controls src="{{ preview_url }}">Your browser does not support the <code>audio</code> element.</audio>
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>

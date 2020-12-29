@@ -1,10 +1,10 @@
 <h1>Albums for: {{ artistAlbums.items.[0].artists.[0].name }}</h1>
-<ul>
+<ul class="sas-album-collection sas-collection">
   {{#each artistAlbums.items}}
-  <li>
-    <img src="{{ images.[1].url }}" alt="{{ name }}" />
-    <h2>{{ name }}</h2>
-    <a href="/tracks/{{ id }}">View Tracks</a>
+  <li class="sas-album-collection__entry sas-card">
+    <img class="sas-card__image" src="{{ images.[1].url }}" alt="{{ name }}" />
+    <h2 class="sas-card__name">{{ name }}</h2>
+    <a  class="sas-card__button" href="/tracks/{{ id }}">View Tracks</a>
   </li>
   {{/each}}
 </ul>

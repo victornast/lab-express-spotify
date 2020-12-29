@@ -28,7 +28,7 @@ app.use(express.static(__dirname + '/public'));
 // Our routes go here:
 
 app.get('/', (request, response) => {
-  response.render('home', { pageTitle: 'Home' });
+  response.render('home', { pageTitle: 'Home', activeHome: true });
 });
 
 app.get('/artist-search', (request, response) => {
@@ -70,7 +70,7 @@ app.get('/tracks/:albumId', (request, response) => {
   spotifyApi
     .getAlbumTracks(albumId, { limit: 5, offset: 1 })
     .then((data) => {
-      console.log('Tracks: ', data.body);
+      // console.log('Tracks: ', data.body);
       response.render('tracks', {
         pageTitle: 'Tracks',
         albumTracks: data.body

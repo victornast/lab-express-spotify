@@ -1,9 +1,9 @@
-<ul>
+<ul class="sas-artist-collection sas-collection">
   {{#each artistList.items}}
-  <li>
-    <img src="{{ images.[1].url }}" alt="{{ name }}" />
-    <h2>{{ name }}</h2>
-    <a href="/albums/{{ id }}">View Albums</a>
+  <li class="sas-artist-collection__entry sas-card">
+    <img class="sas-card__image" src="{{ images.[1].url }}" alt="{{ name }}" />
+    <h2 class="sas-card__name">{{ name }}</h2>
+    <a class="sas-card__button" href="/albums/{{ id }}">View Albums</a>
   </li>
   {{/each}}
 </ul>

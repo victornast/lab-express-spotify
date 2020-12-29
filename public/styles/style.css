@@ -13,8 +13,19 @@ body {
 
 img {
   display: inline-block;
+  max-width: 100%;
 }
 
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+}
 /* Utilities */
 
 .sr-only {
@@ -26,4 +37,95 @@ img {
   overflow: hidden;
   padding: 0;
   position: absolute;
+}
+
+/* Artist Search - Homepage */
+
+.spotify-artist-search {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.sas--cover {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: center / cover no-repeat url('/images/spotify-background.jpeg');
+}
+
+/* artist search component */
+
+/* 1: make container responsive; as wide as possible but not wider than the max value */
+.sas-artist-search {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffffff88;
+  padding: 4em 6em;
+  width: 100%; /* 1 */
+  max-width: 40em; /* 1 */
+}
+
+.sas-artist-search__input,
+.sas-artist-search__button {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.sas-artist-search__input {
+  padding: 0.5em 1em;
+  max-width: 25em;
+  width: 100%;
+  border: 1px solid lightgrey;
+  border-radius: 0.25em;
+}
+
+.sas-artist-search__button {
+  border: 0;
+  padding: 0.5em 1em;
+  margin-top: 1em;
+  color: white;
+  background-color: salmon;
+}
+
+/* Album View */
+
+.sas-collection {
+  list-style: none;
+  padding: 0;
+  display: inline-grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2em;
+  margin: 2em auto;
+  max-width: auto;
+}
+
+.sas-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 18em;
+  background-color: grey;
+}
+
+.sas-card__image {
+  max-height: 300px;
+}
+
+.sas-card__name {
+  color: white;
+  margin: 0.2em;
+  padding: 0;
+}
+
+.sas-card__button {
+  padding: 0.5em 1em;
+  color: white;
+  background-color: salmon;
+  border-radius: 0.25em;
+  text-decoration: none;
+  font-weight: 600;
+  margin-bottom: 0.7em;
 }
